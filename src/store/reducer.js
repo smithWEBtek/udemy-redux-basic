@@ -23,8 +23,7 @@ const reducer = (state = initialState, action) => {
         persons: state.persons.concat(newPerson)
       }
     case actionTypes.DELETE_PERSON:
-      let updatedPersons = state.persons.slice();
-      updatedPersons = updatedPersons.filter(person => person.id !== action.personId)
+      let updatedPersons = state.persons.filter(person => person.id !== action.personId)
       return {
         ...state,
         persons: updatedPersons
